@@ -4,7 +4,7 @@
   "https": true,
   "serveConfigurations": {
     "default": {
-      "pageUrl": "https://itrsandboxo365.sharepoint.com/sites/johandev/Migration%20TEST/",
+      "pageUrl": "https://jonasbjerke.sharepoint.com/sites/Prototyping/Shared%20Documents/Forms/AllItems.aspx",
       "customActions": {
         "7f6fdb10-39dc-402a-a99f-0ba942b19614": {
           "location": "ClientSideExtension.ListViewCommandSet.CommandBar",

@@ -6,6 +6,7 @@ import { TextField } from 'office-ui-fabric-react/lib/TextField';
 import { PrimaryButton } from 'office-ui-fabric-react/lib/Button';
 import { Icon } from 'office-ui-fabric-react/lib/Icon';
 import styles from './JustALink.module.scss';
+import { Dialog, DialogContent } from 'office-ui-fabric-react/lib/Dialog';
 
 interface IJustALinkContentProps {
     fileName: string;
@@ -32,6 +33,7 @@ export default class JustALinkComponent extends BaseDialog {
 
     private onDismiss()
     {
+        this.close();
         ReactDOM.unmountComponentAtNode(this.domElement);
     }
 }
@@ -49,26 +51,22 @@ class JustALinkContent extends
     public render(): JSX.Element {
       return (
           <div>
-            <Callout
-                className="ms-CalloutExample-callout"
-                ariaLabelledBy={'callout-label-1'}
-                ariaDescribedBy={'callout-description-1'}
-                role={'alertdialog'}                
-                gapSpace={0}
-                target={this.props.domElement}
-                hidden={false}
-                setInitialFocus={true}                
-                onDismiss={this.onDismiss.bind(this)}>
-                <div className={styles.justALinkContentContainer}>
-                    <div className={styles.iconContainer} ><Icon iconName="CheckMark" className={styles.icon} /></div>
-                    <div className={styles.fileName}>Link to: '{this.props.fileName}' copied</div>
-                    <div className={styles.shareContainer}>
-                        <TextField className={styles.filePathTextBox} value={this.props.absolutePath} />
-                        <PrimaryButton text="Copy" onClick={this.btnCopyCLicked.bind(this)}
-                        />
-                    </div>                    
-                </div>
-            </Callout>
+            <Dialog 
+                  onDismiss={this.onDismiss.bind(this)} 
+                  hidden={false}
+                  containerClassName={styles.noPadding}
+                >
+                  <div className={styles.justALinkContentContainer}>
+                      <div className={styles.iconContainer} ><Icon iconName="CheckMark" className={styles.icon} /></div>
+                      <div className={styles.fileName}>Link to: '{this.props.fileName}' copied</div>
+                      <div className={styles.shareContainer}>
+                          <TextField className={styles.filePathTextBox} value={this.props.absolutePath} />
+                          <PrimaryButton text="Copy" onClick={this.btnCopyCLicked.bind(this)}
+                          />
+                      </div>                    
+                  </div>
+
+                </Dialog>
           </div>
       );
     }

@@ -1,11 +1,6 @@
-:global .ms-Modal 
-{
-    opacity:0 !important;
-}
-
 .justALinkContentContainer
 {
-    padding:24px;
+    padding: 0px;
 }
 
 .iconContainer
@@ -55,3 +50,7 @@
         transform: scale(1.0);
     }
   }
+
+.noPadding{
+    padding: 0px;
+}

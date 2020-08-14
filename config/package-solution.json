@@ -3,7 +3,7 @@
   "solution": {
     "name": "just-a-link-client-side-solution",
     "id": "59815861-6c3c-41b7-b1c2-6ee31a9c1540",
-    "version": "1.0.0.0",
+    "version": "1.0.0.1",
     "includeClientSideAssets": true,
     "skipFeatureDeployment": true,
     "features": [
